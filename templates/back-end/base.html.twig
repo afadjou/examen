@@ -1,0 +1,14 @@
+{% extends 'page.html.twig' %}
+
+{% block sidebar %}
+    {% include 'back-end/sidebare.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    {{ form(form) }}
+    {% if is_empty %}
+        <div class="text-dark" role="alert">
+            aucun résultat
+        </div>
+    {% endif %}
+{% endblock %}

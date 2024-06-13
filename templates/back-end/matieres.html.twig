@@ -1,0 +1,40 @@
+{% extends 'back-end/base.html.twig' %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Matières</h1>
+        {% include 'back-end/header.html.twig' %}
+    </div>
+    {{ form(form) }}
+
+    <h3>Liste des matières</h3>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date de création</th>
+                <th>Intitulé</th>
+                <th>Coefficient</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if items %}
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.created | date }}</td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.coef }}</td>
+                        <th>
+                            <a href="/admin/matieres/{{ item.id }}"><span data-feather="search"></span></a>
+                            <a href="/admin/matieres/delete/{{ item.id }}"><span data-feather="trash"></span></a>
+                        </th>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

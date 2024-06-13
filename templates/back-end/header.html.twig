@@ -1,0 +1,12 @@
+<div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+        {% if add_path is defined %}
+            <button class="btn btn-sm btn-outline-secondary">
+                <a href="{{ add_path }}">
+                    <span data-feather="file"></span>
+                    Nouveau
+                </a>
+            </button>
+        {% endif %}
+    </div>
+</div>

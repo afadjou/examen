@@ -1,0 +1,59 @@
+{% extends 'page.html.twig' %}
+
+{% block css %}
+    <style>
+        body{
+            background-color:#eee;
+            font-family: sans-serif;
+            color: #566573;
+        }
+
+        .height{
+            height: 100vh;
+        }
+
+        form{
+            position: relative;
+            width: 50%;
+            margin: 16% auto auto;
+        }
+        form label,
+        form input[type="search"] {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+        form input[type="search"] {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px 10px 10px 30px;
+            border-radius: 15px;
+            border: solid 0.5px #D5D8DC;
+            outline: #9ca3af;
+            color: #566573;
+            text-align: left;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        form button {
+            position: absolute;
+            right: 11px;
+            top: 45px;
+            height: 35px;
+            border: solid .5px #ffffff;
+            background: none;
+            border-left: solid 1px #D5D8DC;
+            padding-left: 8px;
+            color: #566573;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {{ form(form) }}
+    {% if is_empty %}
+        <div class="text-dark" role="alert">
+            aucun résultat
+        </div>
+    {% endif %}
+{% endblock %}

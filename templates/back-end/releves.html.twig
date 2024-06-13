@@ -1,0 +1,44 @@
+{% extends 'back-end/base.html.twig' %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Relevé de notes - [{{ user.name ~ ' ' ~ user.firstName }}]</h1>
+        {% include 'back-end/header.html.twig' %}
+    </div>
+
+    {{ form(form) }}
+
+    <h3>Liste des relevés de notes</h3>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date de création</th>
+                <th>Examen</th>
+                <th>Session</th>
+                <th>Série</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if items %}
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.created | date }}</td>
+                        <td>{{ item.getexamen().gettitle() }}</td>
+                        <td>{{ item.year }}</td>
+                        <td>{{ item.serial }}</td>
+                        <th>
+                            <a href="/admin/releve/{{ user.id }}/{{ item.id }}"><span data-feather="search"></span></a>
+                            <a href="/admin/releves/delete/{{ user.id }}/{{ item.id }}"><span data-feather="trash"></span></a>
+                            <a href="/admin/notes/{{ user.id }}/{{ item.id }}"><span data-feather="edit"></span></a>
+                        </th>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

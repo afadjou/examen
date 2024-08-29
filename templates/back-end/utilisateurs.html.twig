@@ -1,5 +1,7 @@
 {%  extends 'back-end/base.html.twig' %}
-
+ {% block title %}
+     <title>Dashboard - Utilisateurs</title>
+ {% endblock %}
 {% block content %}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">Utilisateurs</h1>
@@ -33,8 +35,8 @@
                         <td>{{ item.email }}</td>
                         <td>{{ item.role }}</td>
                         <th>
-                            <a href="/admin/utilisateurs/{{ item.id }}"><span data-feather="search"></span></a>
-                            <a href="/admin/utilisateurs/delete/{{ item.id }}"><span data-feather="trash"></span></a>
+                            <a href="/admin/utilisateurs/{{ item.id }}" title="détail utilisateurs"><span data-feather="search"></span><span class="sr-only">détail utilisateurs</span></a>
+                            <a href="/admin/utilisateurs/delete/{{ item.id }}" title="supresssion utilisateurs"><span data-feather="trash"></span><span class="sr-only">supprimer utilisateurs</span></a>
                         </th>
                     </tr>
                 {% endfor %}

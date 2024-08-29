@@ -85,7 +85,6 @@ class UtilisateurController extends ControllerBase
         return $this->createFormBuilder($entity)
             ->add('nin', IntegerType::class, [
                 'label' => "Numéro d'identité national :",
-                'attr' => ['pattern' => '/^[0-9]{6}$/', 'maxlength' => 6]
             ])
             ->add('name', TextType::class, [
                 'label' => "Nom :"

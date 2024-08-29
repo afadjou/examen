@@ -1,5 +1,7 @@
 {% extends 'back-end/base.html.twig' %}
-
+ {% block title %}
+     <title>Dashboard - Matières</title>
+ {% endblock %}
 {% block content %}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">Matières</h1>
@@ -28,8 +30,8 @@
                         <td>{{ item.title }}</td>
                         <td>{{ item.coef }}</td>
                         <th>
-                            <a href="/admin/matieres/{{ item.id }}"><span data-feather="search"></span></a>
-                            <a href="/admin/matieres/delete/{{ item.id }}"><span data-feather="trash"></span></a>
+                            <a href="/admin/matieres/{{ item.id }}" title="détail matière"><span data-feather="search"></span><span class="sr-only">détail matière</span></a>
+                            <a href="/admin/matieres/delete/{{ item.id }}" title="suppression matière" ><span data-feather="trash"></span><span class="sr-only">supprimer matière</span></a>
                         </th>
                     </tr>
                 {% endfor %}

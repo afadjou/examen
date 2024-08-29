@@ -31,9 +31,9 @@
                         <td>{{ item.year }}</td>
                         <td>{{ item.serial }}</td>
                         <th>
-                            <a href="/admin/releve/{{ user.id }}/{{ item.id }}"><span data-feather="search"></span></a>
-                            <a href="/admin/releves/delete/{{ user.id }}/{{ item.id }}"><span data-feather="trash"></span></a>
-                            <a href="/admin/notes/{{ user.id }}/{{ item.id }}"><span data-feather="edit"></span></a>
+                            <a href="/admin/releve/{{ user.id }}/{{ item.id }}" title="détails releve"><span data-feather="search"></span><span class="sr-only"> details du releve</span></a>
+                            <a href="/admin/releves/delete/{{ user.id }}/{{ item.id }}" title="supression releve"><span data-feather="trash"></span><span class="sr-only">supprimer un releve</span></a>
+                            <a href="/admin/notes/{{ user.id }}/{{ item.id }}" title="modifier releve"><span data-feather="edit"></span><span class="sr-only">modifier un releve</span></a>
                         </th>
                     </tr>
                 {% endfor %}

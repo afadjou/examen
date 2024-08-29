@@ -1,4 +1,7 @@
 {% extends 'back-end/base.html.twig' %}
+ {% block title %}
+     <title>Dashboard - Examen</title>
+ {% endblock %}
 
 {% block content %}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -27,8 +30,8 @@
                         <td>{{ item.created | date }}</td>
                         <td>{{ item.title }}</td>
                         <th>
-                            <a href="/admin/examens/{{ item.id }}"><span data-feather="search"></span></a>
-                            <a href="/admin/examens/delete/{{ item.id }}"><span data-feather="trash"></span></a>
+                            <a href="/admin/examens/{{ item.id }}" title="voir détail examen"><span data-feather="search"></span><span class="sr-only">voir detail examen</span></a>
+                            <a href="/admin/examens/delete/{{ item.id }}" title="suppression examen"><span data-feather="trash"></span><span class="sr-only">supprimer examen</span></a>
                         </th>
                     </tr>
                 {% endfor %}

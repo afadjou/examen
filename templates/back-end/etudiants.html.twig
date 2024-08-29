@@ -1,5 +1,7 @@
 {%  extends 'back-end/base.html.twig' %}
-
+ {% block title %}
+     <title>Dashboard - Etudiants</title>
+ {% endblock %}
 {% block content %}
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">Étudiants</h1>
@@ -33,9 +35,9 @@
                         <td>{{ item.email }}</td>
                         <td>{{ item.role }}</td>
                         <th>
-                            <a href="/admin/etudiants/{{ item.id }}"><span data-feather="search"></span></a>
-                            <a href="/admin/etudiants/delete/{{ item.id }}"><span data-feather="trash"></span></a>
-                            <a href="/admin/releves/{{ item.id }}"><span data-feather="file-text"></span></a>
+                            <a href="/admin/etudiants/{{ item.id }}" title="détail étudiants"><span data-feather="search"></span><span class="sr-only">détail étudiants</span></a>
+                            <a href="/admin/etudiants/delete/{{ item.id }}" title="supression étudiants"><span data-feather="trash"></span><span class="sr-only">supprimer étudiants</span></a>
+                            <a href="/admin/releves/{{ item.id }}" title="consulter relèvé de note"><span data-feather="file-text"></span><span class="sr-only">consulter relèvé de note</span></a>
                         </th>
                     </tr>
                 {% endfor %}

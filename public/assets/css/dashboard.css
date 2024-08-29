@@ -38,7 +38,7 @@ body {
 
 .sidebar .nav-link .feather {
   margin-right: 4px;
-  color: #999;
+  color: #888;
 }
 
 .sidebar .nav-link.active {
@@ -94,13 +94,14 @@ body {
 
 @media (max-width: 767px) {
   .sidebar {
-    top:132px;
+    top: 50px;
   }
   .sidebar ul li a span.text-title {
     display: none;
   }
-  main.px-4 {
-     padding-left: 60px !important;
+  .px-4 {
+    width: 90%;
+    margin-left: 45px;
   }
 }
 

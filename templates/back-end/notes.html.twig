@@ -28,8 +28,8 @@
                         <td>{{ item.getmatiere().gettitle() }}</td>
                         <td>{{ item.note }}</td>
                         <th>
-                            <a href="/admin/note/{{ user.id }}/{{ releve.id }}/{{ item.id }}"><span data-feather="search"></span></a>
-                            <a href="/admin/notes/delete/{{ user.id }}/{{ releve.id }}/{{ item.id }}"><span data-feather="trash"></span></a>
+                            <a href="/admin/note/{{ user.id }}/{{ releve.id }}/{{ item.id }}" title="détail note"><span data-feather="search"></span><span class="sr-only">detail note</span></a>
+                            <a href="/admin/notes/delete/{{ user.id }}/{{ releve.id }}/{{ item.id }}" title="suppression note"><span data-feather="trash"></span><span class="sr-only">suppression note</span></a>
                         </th>
                     </tr>
                 {% endfor %}
